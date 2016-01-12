@@ -16,7 +16,7 @@ clean:
 	rm -rf ./SOURCES/picfit.bin
 	mkdir -p ./rpmbuild/SPECS/ ./rpmbuild/SOURCES/
 	mkdir -p ./SPECS ./SOURCES/src ./SOURCES/bin ./SOURCES/pkg
-	go get github.com/tools/godep github.com/jteeuwen/go-bindata/...
+	go get github.com/tools/godep 
 
 get-src:
 	echo ${GOPATH}
@@ -26,7 +26,7 @@ tidy-src:
 	rm -rf ./SOURCES/src ./SOURCES/bin ./SOURCES/pkg
 
 build-src: get-src
-	cd ./SOURCES/src/github.com/swisstxt/netmgmt; godep restore; godep go generate; godep go install
+	cd ./SOURCES/src/github.com/swisstxt/netmgmt; godep restore; godep go install
 	cp ./SOURCES/bin/netmgmt ./SOURCES/netmgmt.bin
 
 build: clean build-src tidy-src
