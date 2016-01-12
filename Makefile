@@ -16,7 +16,7 @@ clean:
 	rm -rf ./SOURCES/picfit.bin
 	mkdir -p ./rpmbuild/SPECS/ ./rpmbuild/SOURCES/
 	mkdir -p ./SPECS ./SOURCES/src ./SOURCES/bin ./SOURCES/pkg
-	go get github.com/tools/godep golang.org/ github.com/jteeuwen/go-bindata/...
+	go get github.com/tools/godep github.com/jteeuwen/go-bindata/...
 
 get-src:
 	echo ${GOPATH}
