@@ -3,7 +3,7 @@ Description=netmgmt
 After=netmgmt.target
 
 [Service]
-EnvironmentFile=-/etc/sysconfig/deepthought
+EnvironmentFile=-/etc/sysconfig/netmgmt
 WorkingDirectory=/opt/netmgmt
 ExecStart=/opt/netmgmt/netmgmt
 Restart=on-failure
