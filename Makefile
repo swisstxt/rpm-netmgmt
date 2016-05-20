@@ -13,7 +13,7 @@ all: build
 clean:
 	rm -rf ./rpmbuild
 	rm -rf ./SOURCES/src ./SOURCES/bin ./SOURCES/lib
-	rm -rf ./SOURCES/picfit.bin
+	rm -rf ./SOURCES/netmgmt.bin
 	mkdir -p ./rpmbuild/SPECS/ ./rpmbuild/SOURCES/
 	mkdir -p ./SPECS ./SOURCES/src ./SOURCES/bin ./SOURCES/pkg
 	go get github.com/tools/godep 
