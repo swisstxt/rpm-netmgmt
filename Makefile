@@ -16,7 +16,7 @@ clean:
 	rm -rf ./SOURCES/netmgmt.bin
 	mkdir -p ./rpmbuild/SPECS/ ./rpmbuild/SOURCES/
 	mkdir -p ./SPECS ./SOURCES/src ./SOURCES/bin ./SOURCES/pkg
-	go get github.com/tools/godep 
+	go get github.com/tools/godep
 
 get-src:
 	echo ${GOPATH}
