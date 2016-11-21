@@ -30,7 +30,7 @@ clean:
 get-src:
 	echo ${GOPATH}
 	git clone --branch newdevops ${REPOURL} ${GITCLONE}
-	echo "$(shell /opt/buildhelper/buildhelper getgittag ${GITCLONE})" >"${SOURCES}/netmgmt.version"
+	/opt/buildhelper/buildhelper getgittag ${GITCLONE} >"${SOURCES}/netmgmt.version"
 
 tidy-src:
 	rm -rf ${SOURCES}/src ${SOURCES}/bin ${SOURCES}/pkg
