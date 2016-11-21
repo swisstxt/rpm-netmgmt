@@ -3,7 +3,7 @@ REPO=github.com/swisstxt/netmgmt
 REPOURL=https://github.com/swisstxt/netmgmt
 
 HOME=$(shell pwd)
-SOURCES=${HOME}/SPECS/
+SPECS=${HOME}/SPECS/
 SOURCES=${HOME}/SOURCES/
 GITCLONE=${SOURCES}/src/${REPO}
 RPMBUILD=${HOME}/rpmbuild
@@ -36,7 +36,7 @@ tidy-src:
 
 build-src: get-src
 	cd ${GITCLONE}; godep restore; godep go install
-	cp ${SOURCES} ${SOURCES}/netmgmt.bin
+	cp ${SOURCES}/bin/netmgmt ${SOURCES}/netmgmt.bin
 
 build: clean build-src tidy-src
 	cp -r ${SPECS}/* ${RPMBUILD}/SPECS/ || true
