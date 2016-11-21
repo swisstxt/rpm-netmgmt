@@ -30,7 +30,7 @@ clean:
 get-src:
 	echo ${GOPATH}
 	git clone --branch newdevops ${REPOURL} ${GITCLONE}
-	$(file >${SOURCES}/netmgmt.version,$(VERSION))
+	echo "$(VERSION)" >"${SOURCES}/netmgmt.version"
 
 tidy-src:
 	rm -rf ${SOURCES}/src ${SOURCES}/bin ${SOURCES}/pkg
@@ -43,7 +43,7 @@ build: clean build-src tidy-src
 	cp -r ${SPECS}/* ${RPMBUILD}/SPECS/ || true
 	cp -r ${SOURCES}/* ${RPMBUILD}/SOURCES/ || true
 	rpmbuild -ba ${SPEC} \
-	--define "ver $(file <${SOURCES}/netmgmt.version)" \
+	--define "ver $(shell cat ${SOURCES}/netmgmt.version") \
 	--define "rel ${RELEASE}" \
 	--define "name ${NAME}" \
 	--define "os_rel ${OS_RELEASE}" \
